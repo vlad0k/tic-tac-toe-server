@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 const game = new Game();
 
-// app.use(express.static('public'))
+app.use(express.static('public'))
 // app.set("port", process.env.PORT || 3000);
 // app.set("host", process.env.HOST || "localhost");
 
@@ -26,9 +26,9 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.json());
 
-// app.get('/', (req, res) => {
-//   res.sendFile('index.html');
-// })
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
+})
 
 app.get('/start', (req, res) => {
   const lastInstanceId = game.getLastInstanceId();
