@@ -87,6 +87,7 @@ app.ws('/table/:id', (ws, req) => {
 app.listen('3001', (err) => {
   !err && console.log(`App is listening on port ${port}
 Go to the http://localhost:${port} to start the game`);
+  console.log(process.env.PUBLIC_URL);
 })
 
 module.exports = app;
