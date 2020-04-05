@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html');
+  res.sendFile('../public/index.html');
 })
 
 app.get('/start', (req, res) => {
