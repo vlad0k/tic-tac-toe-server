@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 const game = new Game();
 
-app.use(express.static('..' + __dirname + '/public'))
+app.use(express.static('../public'))
 // app.set("port", process.env.PORT || 3000);
 // app.set("host", process.env.HOST || "localhost");
 
