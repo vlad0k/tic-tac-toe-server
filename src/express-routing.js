@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 const game = new Game();
 
-app.use(express.static(__dirname + 'public'))
+app.use(express.static(__dirname + '/public'))
 // app.set("port", process.env.PORT || 3000);
 // app.set("host", process.env.HOST || "localhost");
 
@@ -90,7 +90,8 @@ app.ws('/table/:id', (ws, req) => {
 app.listen(port, (err) => {
   !err && console.log(`App is listening on port ${port}
 Go to the http://localhost:${port} to start the game`);
-  console.log(process.env.PUBLIC_URL);
+  console.log(process.env.HOST);
+  console.log(__dirname);
 })
 
 module.exports = app;
