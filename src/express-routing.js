@@ -14,6 +14,9 @@ const port = process.env.PORT || 3000;
 const game = new Game();
 
 // app.use(express.static('public'))
+// app.set("port", process.env.PORT || 3000);
+// app.set("host", process.env.HOST || "localhost");
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -84,7 +87,7 @@ app.ws('/table/:id', (ws, req) => {
 })
 
 
-app.listen('3001', (err) => {
+app.listen(port, (err) => {
   !err && console.log(`App is listening on port ${port}
 Go to the http://localhost:${port} to start the game`);
   console.log(process.env.PUBLIC_URL);
