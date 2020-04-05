@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 const game = new Game();
 
-app.use(express.static('./public'))
+app.use(express.static('..' + __dirname + '/public'))
 // app.set("port", process.env.PORT || 3000);
 // app.set("host", process.env.HOST || "localhost");
 
@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html', {root: './public'});
+  res.sendFile('index.html');
 })
 
 app.get('/start', (req, res) => {
