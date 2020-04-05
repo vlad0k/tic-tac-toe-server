@@ -8,7 +8,7 @@ const checkWinner = require('./check-winner.js');
 
 const app = express();
 expressWs(app);
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const game = new Game();
 
